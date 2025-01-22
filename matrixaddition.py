@@ -7,24 +7,35 @@ def add_matrices(matrix1, matrix2):
         result.append(row)
     return result
 
+def matrix_input(rows, cols):
+    matrix = []
+    for i in range(rows):
+        row = []
+        for j in range(cols):
+            row.append(int(input(f"Enter element [{i+1}][{j+1}]: ")))
+        matrix.append(row)
+    return matrix
+
+def matrix_print(matrix):
+    for row in matrix:
+        print(row)
 # Input matrices
 rows = int(input("Enter number of rows: "))
 cols = int(input("Enter number of columns: "))
 
 matrix1 = []
 print("Enter elements for Matrix 1:")
-for i in range(rows):
-    row = list(map(int, input().split()))
-    matrix1.append(row)
+matrix1 = matrix_input(rows, cols)
+print("Matrix 1:")
+matrix_print(matrix1)
 
 matrix2 = []
 print("Enter elements for Matrix 2:")
-for i in range(rows):
-    row = list(map(int, input().split()))
-    matrix2.append(row)
+matrix2 = matrix_input(rows, cols)
+print("Matrix 2:")
+matrix_print(matrix2)
 
 # Perform addition
 result_matrix = add_matrices(matrix1, matrix2)
 print("Resultant Matrix after addition:")
-for row in result_matrix:
-    print(row)
+matrix_print(result_matrix)
