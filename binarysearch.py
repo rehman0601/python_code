@@ -10,10 +10,10 @@ def binary_search(arr, target):
             right = mid - 1
     return -1
 
-arr = list(map(int, input("Enter sorted numbers separated by space: ").split()))
+lst=[1,2,3,4,5,6,7,8,9,10]
 target = int(input("Enter the number to search for: "))
 
-result = binary_search(arr, target)
+result = binary_search(lst, target)
 if result != -1:
     print(f"Element {target} found at index {result}.")
 else:
